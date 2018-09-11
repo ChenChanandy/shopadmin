@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="shopadmin.mapper.CellphoneMapper">
+  <insert id="create" useGeneratedKeys="true" keyColumn="ID" keyProperty="id">
+    insert into CELLPHONE(BRAND, MODEL, OS, 
+                          CPU_BRAND, CPU_CORE_COUNT, 
+                          RAM, STORAGE, COLOR, DESCRIPTION, 
+                          PRICE)
+    values(#{brand}, #{model}, #{os}, 
+           #{cpuBrand}, #{cpuCoreCount}, 
+           #{ram}, #{storage}, #{color}, #{description}, 
+           #{price})
+  </insert>
+  
+  <select id="findAll" resultType="Cellphone">
+    select * from CELLPHONE
+  </select>
+</mapper>
